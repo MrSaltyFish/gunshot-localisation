@@ -4,7 +4,6 @@ import os
 
 app = Flask(__name__)
 
-# Load the model output (Assume we have some precomputed results)
 PREDICTIONS_FILE = "predictions.joblib"
 
 def load_predictions():
