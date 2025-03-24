@@ -16,5 +16,12 @@ def get_prediction():
     data = load_predictions()
     return jsonify(data)
 
+@app.route("/", methods=["GET"])
+def home():
+    data = "Hello Server!"
+    return jsonify(data)
+
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
