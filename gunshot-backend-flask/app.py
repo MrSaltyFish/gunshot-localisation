@@ -1,16 +1,15 @@
 from flask import Flask, jsonify
-import pickle
+import joblib
 import os
 
 app = Flask(__name__)
 
 # Load the model output (Assume we have some precomputed results)
-PREDICTIONS_FILE = "predictions.pkl"
+PREDICTIONS_FILE = "predictions.joblib"
 
 def load_predictions():
     if os.path.exists(PREDICTIONS_FILE):
-        with open(PREDICTIONS_FILE, "rb") as f:
-            return pickle.load(f)
+        return joblib.load(PREDICTIONS_FILE)
     return {"error": "No predictions available"}
 
 @app.route("/api/locate", methods=["GET"])
