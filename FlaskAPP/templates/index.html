@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunshot DOA Estimation</title>
+</head>
+<body>
+    <h2>Upload WAV File for Processing</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+    {% if filename %}
+        <h3>Results:</h3>
+        <p>File Processed: {{ filename }}</p>
+        <h4>Polar Plot:</h4>
+        <img src="/plots/polar.png" alt="Polar Plot" width="400">
+        <h4>Cartesian Plot:</h4>
+        <img src="/plots/cartesian.png" alt="Cartesian Plot" width="400">
+    {% endif %}
+</body>
+</html>
