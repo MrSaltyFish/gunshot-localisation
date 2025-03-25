@@ -4,3 +4,4 @@ pandas
 librosa
 matplotlib
 werkzeug
+gunicorn
